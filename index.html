@@ -1,132 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Classical Composer & Pianist</title>
-  <style>
-    /* (styles unchanged from canvas version) */
-  </style>
-</head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-links">
-      <a href="#composition">Composition Repertoire</a>
-      <a href="#performance">Performance</a>
-      <a href="#support">Support☕️</a>
-    </div>
-  </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classical Composer & Pianist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/mnvN-hcXfxY?autoplay=1&mute=0&loop=1&playlist=mnvN-hcXfxY&controls=0&showinfo=0&rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="name-overlay">
-      <img src="/img/teresa_sig_w.png" alt="Teresa Y. He Signature" style="max-width: 80vw; max-height: 15vh; width: auto; height: auto;" />
-    </div>
-  </section>
+        body {
+            background-color: #f5f5f0;
+            color: #333;
+            background-image: url('data:image/png;base64,iVBORw0K...'); /* shortened for readability */
+        }
 
-  <!-- Bio -->
-  <section class="section" id="bio">
-    <div class="bio-wrap">
-      <img src="/img/avatar_first_page_bio.png" alt="Composer Photo" class="bio-img" />
-      <div class="bio-text">
-        <h2 style="margin-bottom: 1rem;">About</h2>
-        <p>Young pianist Teresa He was born in Beijing and started her journey with piano before the age of 4. She joined Dr. Wenli Zhou's studio in 2014 and exploring her dynamics in Greater Houston Area. Before Collage, she played recitals and chamber music in Beijing and Dalian. Teresa studied Bachelor of Music in piano performance at University of Texas at Austin in 2016 with Prof. David Renner and Prof. Andrew Bowen. She showed her great interest in chamber music as well, founded Pastel Piano Trio in freshman year and studied with Miro Quartet and pianist Patti Wolf.</p>
-      </div>
-    </div>
-  </section>
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 2rem;
+            z-index: 1000;
+            text-align: center;
+            background: rgba(245, 245, 240, 0.5);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-  <!-- Composition Videos -->
-  <section class="section" id="composition">
-    <h2>Composition Projects</h2>
-    <div id="composition-grid" class="grid"></div>
-  </section>
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
 
-  <!-- Performance Videos -->
-  <section class="section" id="performance">
-    <h2>Piano Performance Projects</h2>
-    <div id="performance-grid" class="grid"></div>
-  </section>
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-  <!-- Signature -->
-  <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 2rem 0;">
-    <img src="/img/teresa_sig_b.png" alt="Teresa Y. He Signature" style="max-width: 60vw; max-height: 12vh; width: auto; height: auto; opacity: 0.3;" />
-  </div>
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
 
-  <!-- Support -->
-  <footer id="support">
-    <div style="max-width: 600px; margin: 0 auto;">
-      <h2 style="font-size: 1.5rem; color: #333; margin-bottom: 1.5rem; letter-spacing: 2px;">Support Teresa ☕️</h2>
-      <p style="color: #555; margin-bottom: 2rem;">If you enjoy my music and projects, consider buying me a coffee to support my creative journey!</p>
-      <a href="https://www.buymeacoffee.com/yourusername" target="_blank" style="display: inline-block; background: #ffdd00; color: #333; font-weight: bold; padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.2rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Buy Me a Coffee</a>
-    </div>
-  </footer>
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+        }
 
-  <!-- Video Modal -->
-  <div id="video-modal" class="modal" role="dialog" aria-modal="true" aria-label="Video player">
-    <div class="modal-inner">
-      <button class="close" id="close-modal" aria-label="Close">✕</button>
-      <iframe id="modal-iframe" src="" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 
-  <script>
-    const compositionVideos = [
-      { id: 'mnvN-hcXfxY', title: 'Composition Project 1', duration: '3:21' },
-      { id: 'XtYv_9hYdCI', title: 'Composition Project 2', duration: '4:05' }
-    ];
+        .video-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            pointer-events: none;
+        }
 
-    const performanceVideos = [
-      { id: 'ywfjOlccg7s', title: 'Piano Performance 1', duration: '7:40' },
-      { id: '0HkDReDPo5s', title: 'Piano Performance 2', duration: '5:12' },
-      { id: 'whbK1JS9fFY', title: 'Piano Performance 3', duration: '6:30' }
-    ];
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    const ytThumb = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
-    const ytEmbed = (id) => `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+        .name-overlay {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            text-align: center;
+        }
 
-    function renderGrid(list, mountEl) {
-      mountEl.innerHTML = list.map(v => `
-        <article class="card" data-video="${v.id}">
-          <div class="thumb">
-            <img src="${ytThumb(v.id)}" alt="${v.title} thumbnail" loading="lazy" />
-            ${v.duration ? `<span class="duration">${v.duration}</span>` : ''}
-          </div>
-          <div class="title"><h3 style="font-size:1.05rem;">${v.title}</h3></div>
-        </article>
-      `).join('');
-    }
-
-    const compGrid = document.getElementById('composition-grid');
-    const perfGrid = document.getElementById('performance-grid');
-    renderGrid(compositionVideos, compGrid);
-    renderGrid(performanceVideos, perfGrid);
-
-    const modal = document.getElementById('video-modal');
-    const iframe = document.getElementById('modal-iframe');
-    const closeBtn = document.getElementById('close-modal');
-
-    function openVideo(id) {
-      iframe.src = ytEmbed(id);
-      modal.classList.add('open');
-    }
-    function closeVideo() {
-      iframe.src = '';
-      modal.classList.remove('open');
-    }
-
-    document.addEventListener('click', (e) => {
-      const card = e.target.closest('.card');
-      if (card && card.dataset.video) {
-        openVideo(card.dataset.video);
-      }
-      if (e.target === modal) { closeVideo(); }
-    });
-    closeBtn.addEventListener('click', closeVideo);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
-  </script>
-</body>
-</html>
+        .bio {
+            padding: 4rem 2rem;
+            background-color: #f5f5f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
