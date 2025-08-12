@@ -193,6 +193,33 @@
             color: #333;
         }
 
+        .project-thumb {
+        position: relative;
+        overflow: hidden;
+        }
+        .project-thumb img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9; /* modern browsers */
+            object-fit: cover;
+            display: block;
+        }
+        .project-thumb::after {
+            content: "▶";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            opacity: 0.0;
+            transition: opacity .2s ease;
+        }
+        .project-card:hover .project-thumb::after {
+            opacity: 0.9;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .bio-container {
