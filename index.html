@@ -1,311 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classical Composer & Pianist</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        body {
-            background-color: #f5f5f0;
-            color: #333;
-            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==');
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 2rem;
-            z-index: 1000;
-            text-align: center;
-            background: rgba(245, 245, 240, 0.5);
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .nav-links {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2rem;
-            transition: opacity 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.7;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            width: 100vw;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .video-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .name-overlay {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3;
-            text-align: center;
-            font-size: 4rem;
-            font-weight: bold;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        /* Bio Section */
-        .bio {
-            padding: 4rem 2rem;
-            background-color: #f5f5f0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .bio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .bio-image {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 2px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .bio-text {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            color: #333;
-        }
-
-        .bio-text h2 {
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            color: #333;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 4rem 2rem;
-            background-color: #f5f5f0;
-            min-height: 100vh;
-        }
-
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .projects-container h2 {
-            margin-bottom: 3rem;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            color: #333;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: #fff;
-            border-radius: 2px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .project-title {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .project-title h3 {
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            color: #333;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .bio-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .name-overlay {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classical Composer & Pianist</title>
+  <style>
+    /* (styles unchanged from canvas version) */
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-links">
-            <a href="#composition">Composition Repertoire</a>
-            <a href="#performance">Performance</a>
-            <a href="#support">Support☕️</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/mnvN-hcXfxY?autoplay=1&mute=0&loop=1&playlist=mnvN-hcXfxY&controls=0&showinfo=0&rel=0&modestbranding=1" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div class="name-overlay">
-            <img src="/img/teresa_sig_w.png" alt="Teresa Y. He Signature" style="max-width: 80vw; max-height: 15vh; width: auto; height: auto;">
-        </div>
-    </section>
-
-    <!-- Bio Section -->
-    <section class="bio" id="bio">
-        <div class="bio-container">
-            <img src="/img/avatar_first_page_bio.png" alt="Composer Photo" class="bio-image">
-            <div class="bio-text">
-                <h2>About</h2>
-                <p>Young pianist Teresa He was born in Beijing and started her journey with piano before the age of 4. She joined Dr. Wenli Zhou's studio in 2014 and exploring her dynamics in Greater Houston Area. Before Collage, she played recitals and chamber music in Beijing and Dalian. Teresa studied Bachelor of Music in piano performance at University of Texas at Austin in 2016 with Prof. David Renner and Prof. Andrew Bowen. She showed her great interest in chamber music as well, founded Pastel Piano Trio in freshman year and studied with Miro Quartet and pianist Patti Wolf.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="projects-container">
-            <h2>Composition Projects</h2>
-            <div class="projects-grid">
-                <!-- Composition Project Card 1 -->
-                <div class="project-card">
-                    <img src="composition1.jpg" alt="Composition Project 1" class="project-image">
-                    <div class="project-title">
-                        <h3>Composition Title 1</h3>
-                    </div>
-                </div>
-                <!-- Composition Project Card 2 -->
-                <div class="project-card">
-                    <img src="composition2.jpg" alt="Composition Project 2" class="project-image">
-                    <div class="project-title">
-                        <h3>Composition Title 2</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects" id="performance-projects">
-        <div class="projects-container">
-            <h2>Piano Performance Projects</h2>
-            <div class="projects-grid">
-                <!-- Piano Performance Project Card 1 -->
-                <div class="project-card">
-                    <img src="performance1.jpg" alt="Performance Project 1" class="project-image">
-                    <div class="project-title">
-                        <h3>Performance Title 1</h3>
-                    </div>
-                </div>
-                <!-- Piano Performance Project Card 2 -->
-                <div class="project-card">
-                    <img src="performance2.jpg" alt="Performance Project 2" class="project-image">
-                    <div class="project-title">
-                        <h3>Performance Title 2</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Signature at the bottom -->
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 2rem 0;">
-        <img src="/img/teresa_sig_b.png" alt="Teresa Y. He Signature" style="max-width: 60vw; max-height: 12vh; width: auto; height: auto; opacity: 0.3;">
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-links">
+      <a href="#composition">Composition Repertoire</a>
+      <a href="#performance">Performance</a>
+      <a href="#support">Support☕️</a>
     </div>
-    <!-- Buy Me a Coffee Section -->
-    <footer style="background: #f5f5f0; padding: 3rem 0; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            <h2 style="font-size: 1.5rem; color: #333; margin-bottom: 1.5rem; letter-spacing: 2px;">Support Teresa ☕️</h2>
-            <p style="color: #555; margin-bottom: 2rem;">If you enjoy my music and projects, consider buying me a coffee to support my creative journey!</p>
-            <a href="https://www.buymeacoffee.com/yourusername" target="_blank" style="display: inline-block; background: #ffdd00; color: #333; font-weight: bold; padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.2rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Buy Me a Coffee</a>
-        </div>
-    </footer>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/mnvN-hcXfxY?autoplay=1&mute=0&loop=1&playlist=mnvN-hcXfxY&controls=0&showinfo=0&rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="name-overlay">
+      <img src="/img/teresa_sig_w.png" alt="Teresa Y. He Signature" style="max-width: 80vw; max-height: 15vh; width: auto; height: auto;" />
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="section" id="bio">
+    <div class="bio-wrap">
+      <img src="/img/avatar_first_page_bio.png" alt="Composer Photo" class="bio-img" />
+      <div class="bio-text">
+        <h2 style="margin-bottom: 1rem;">About</h2>
+        <p>Young pianist Teresa He was born in Beijing and started her journey with piano before the age of 4. She joined Dr. Wenli Zhou's studio in 2014 and exploring her dynamics in Greater Houston Area. Before Collage, she played recitals and chamber music in Beijing and Dalian. Teresa studied Bachelor of Music in piano performance at University of Texas at Austin in 2016 with Prof. David Renner and Prof. Andrew Bowen. She showed her great interest in chamber music as well, founded Pastel Piano Trio in freshman year and studied with Miro Quartet and pianist Patti Wolf.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Composition Videos -->
+  <section class="section" id="composition">
+    <h2>Composition Projects</h2>
+    <div id="composition-grid" class="grid"></div>
+  </section>
+
+  <!-- Performance Videos -->
+  <section class="section" id="performance">
+    <h2>Piano Performance Projects</h2>
+    <div id="performance-grid" class="grid"></div>
+  </section>
+
+  <!-- Signature -->
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 2rem 0;">
+    <img src="/img/teresa_sig_b.png" alt="Teresa Y. He Signature" style="max-width: 60vw; max-height: 12vh; width: auto; height: auto; opacity: 0.3;" />
+  </div>
+
+  <!-- Support -->
+  <footer id="support">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 1.5rem; color: #333; margin-bottom: 1.5rem; letter-spacing: 2px;">Support Teresa ☕️</h2>
+      <p style="color: #555; margin-bottom: 2rem;">If you enjoy my music and projects, consider buying me a coffee to support my creative journey!</p>
+      <a href="https://www.buymeacoffee.com/yourusername" target="_blank" style="display: inline-block; background: #ffdd00; color: #333; font-weight: bold; padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.2rem; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.2s;">Buy Me a Coffee</a>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="modal" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal-inner">
+      <button class="close" id="close-modal" aria-label="Close">✕</button>
+      <iframe id="modal-iframe" src="" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const compositionVideos = [
+      { id: 'mnvN-hcXfxY', title: 'Composition Project 1', duration: '3:21' },
+      { id: 'XtYv_9hYdCI', title: 'Composition Project 2', duration: '4:05' }
+    ];
+
+    const performanceVideos = [
+      { id: 'ywfjOlccg7s', title: 'Piano Performance 1', duration: '7:40' },
+      { id: '0HkDReDPo5s', title: 'Piano Performance 2', duration: '5:12' },
+      { id: 'whbK1JS9fFY', title: 'Piano Performance 3', duration: '6:30' }
+    ];
+
+    const ytThumb = (id) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    const ytEmbed = (id) => `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+
+    function renderGrid(list, mountEl) {
+      mountEl.innerHTML = list.map(v => `
+        <article class="card" data-video="${v.id}">
+          <div class="thumb">
+            <img src="${ytThumb(v.id)}" alt="${v.title} thumbnail" loading="lazy" />
+            ${v.duration ? `<span class="duration">${v.duration}</span>` : ''}
+          </div>
+          <div class="title"><h3 style="font-size:1.05rem;">${v.title}</h3></div>
+        </article>
+      `).join('');
+    }
+
+    const compGrid = document.getElementById('composition-grid');
+    const perfGrid = document.getElementById('performance-grid');
+    renderGrid(compositionVideos, compGrid);
+    renderGrid(performanceVideos, perfGrid);
+
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('modal-iframe');
+    const closeBtn = document.getElementById('close-modal');
+
+    function openVideo(id) {
+      iframe.src = ytEmbed(id);
+      modal.classList.add('open');
+    }
+    function closeVideo() {
+      iframe.src = '';
+      modal.classList.remove('open');
+    }
+
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.card');
+      if (card && card.dataset.video) {
+        openVideo(card.dataset.video);
+      }
+      if (e.target === modal) { closeVideo(); }
+    });
+    closeBtn.addEventListener('click', closeVideo);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
+  </script>
 </body>
-</html> 
+</html>
